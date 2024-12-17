@@ -1,0 +1,24 @@
+# Arquivos Python compilados
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Diretórios virtuais
+venv/
+.env/
+
+# Configurações de ambiente
+*.env
+
+# Configurações de IDE
+.idea/
+.vscode/
+
+# Logs e arquivos de depuração
+*.log
+
+# Build e distribuições
+build/
+dist/
+*.egg-info/

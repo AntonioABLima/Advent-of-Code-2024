@@ -22,3 +22,6 @@ venv/
 build/
 dist/
 *.egg-info/
+
+# Arquivos temporários
+tempCodeRunnerFile.py

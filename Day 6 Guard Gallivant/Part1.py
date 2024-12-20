@@ -59,10 +59,7 @@ def turn(direction):
     return turns[direction]
 
 if __name__ == '__main__':
-    start_time = time.time()
+    start_time = time.perf_counter()
     main()
-    end_time = time.time()
+    end_time = time.perf_counter()
     print(f"Execution time: {end_time - start_time:.5f}s")
-
-# Tempo de execucao pyton 3.10 0.00269
-# Tempo de execucao pypy3      0.00909

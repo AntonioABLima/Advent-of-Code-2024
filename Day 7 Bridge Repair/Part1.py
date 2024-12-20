@@ -50,7 +50,7 @@ def isOperationTrue(line):
 
 
 if __name__ == '__main__':
-    start_time = time.time()
+    start_time = time.perf_counter()
     main()
-    end_time = time.time()
+    end_time = time.perf_counter()
     print(f"Execution time: {end_time - start_time:.5f}s")

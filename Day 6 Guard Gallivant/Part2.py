@@ -101,9 +101,9 @@ def main():
     print(counter) 
 
 if __name__ == '__main__':
-    start_time = time.time()
+    start_time = time.perf_counter()
     main()
-    end_time = time.time()
+    end_time = time.perf_counter()
     print(f"Tempo de execucao: {end_time - start_time:.2f} segundos")
 
 # Tempo de execucao pyton 3.10  33.34

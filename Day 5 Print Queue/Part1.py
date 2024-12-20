@@ -15,7 +15,7 @@ def verifyUpdate(update, _dict):
 def findMiddle(_list):
     return _list[len(_list) // 2]
 
-def process_input(lines):
+def processInput(lines):
     ordering_rules = []
     updates = []
 
@@ -39,7 +39,7 @@ def main():
     with open(file_name, 'r') as file:
         lines = file.readlines()
 
-    ordering_rules, updates  = process_input(lines)
+    ordering_rules, updates  = processInput(lines)
 
     unique_page_numbers_list = set(num for sub_list in ordering_rules for num in sub_list)
     unique_page_numbers_dict = {item: [[], []] for item in unique_page_numbers_list}
@@ -57,7 +57,7 @@ def main():
     print(correct_updates_sum)
 
 if __name__ == '__main__':
-    start_time = time.time()
+    start_time = time.perf_counter()
     main()
-    end_time = time.time()
+    end_time = time.perf_counter()
     print(f"Execution time: {end_time - start_time:.5f}s")

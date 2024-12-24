@@ -22,3 +22,6 @@ venv/
 build/
 dist/
 *.egg-info/
+
+# Ignorar arquivos temporários do VSCode
+tempCodeRunnerFile

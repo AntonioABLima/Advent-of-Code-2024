@@ -3,6 +3,15 @@ import time
 def isWithinBounds(coord, matrix):
     return 0 <= coord[0] < len(matrix) and 0 <= coord[1] < len(matrix[0])
 
+def turn(direction):
+    turns = {
+        '^': '>',
+        'v': '<',
+        '>': 'v',
+        '<': '^'
+    }
+    return turns[direction]
+    
 def main():
     nome_arquivo = 'input.txt'
     with open(nome_arquivo, 'r') as arquivo:
@@ -25,7 +34,14 @@ def main():
     }
     
     counter = 0
+    visited_positions = set()
+    
     while True:
+        if tuple(coord) in visited_positions:
+            print("Cycle detected! Exiting.")
+            break
+        visited_positions.add(tuple(coord))
+
         arrow = matrix[coord[0]][coord[1]]  
         ahead_coord = [coord[0] + moves[arrow][0], coord[1] + moves[arrow][1]] 
 
@@ -43,20 +59,11 @@ def main():
             if ahead_symbol == '.':
                 counter += 1
             
-        if ahead_symbol == '#' :
+        elif ahead_symbol == '#':
             arrow = turn(arrow)
             matrix[coord[0]][coord[1]] = arrow
+    
     print(counter)
-
-def turn(direction):
-    turns = {
-        '^': '>',
-        'v': '<',
-        '>': 'v',
-        '<': '^'
-    }
-
-    return turns[direction]
 
 if __name__ == '__main__':
     start_time = time.perf_counter()
